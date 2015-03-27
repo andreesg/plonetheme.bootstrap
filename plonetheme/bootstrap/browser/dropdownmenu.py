@@ -6,7 +6,7 @@ from Products.CMFCore.utils import getToolByName
 class BootstrapDropdownMenu(ViewletBase):
 
     def navtree(self):
-        """context = aq_inner(self.context)
+        context = aq_inner(self.context)
         view = getMultiAdapter((context, self.request),
                                name='sitemap_builder_view')
         data = view.siteMap()
@@ -25,7 +25,7 @@ class BootstrapDropdownMenu(ViewletBase):
             children=data.get('children', []),
             level=1,
             bottomLevel=bottomLevel
-        )"""
+        )
 
 
     def selectedTabs(self, default_tab='index_html', portal_tabs=()):
