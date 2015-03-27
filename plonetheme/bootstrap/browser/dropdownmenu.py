@@ -10,19 +10,21 @@ class BootstrapDropdownMenu(ViewletBase):
         view = getMultiAdapter((context, self.request),
                                name='sitemap_builder_view')
         data = view.siteMap()
-        bottomLevel = 5
-        portal_tabs_view = getMultiAdapter((context, self.request),
-                                           name='portal_tabs_view')
-        portal_tabs = portal_tabs_view.topLevelTabs()
-        selected_tabs = self.selectedTabs(portal_tabs=portal_tabs)
-        selected_portal_tab = selected_tabs['portal']
+        bottomLevel = 2
+        
+        #portal_tabs_view = getMultiAdapter((context, self.request),
+        #                                   name='portal_tabs_view')
+        
+        #portal_tabs = portal_tabs_view.topLevelTabs()
+        #selected_tabs = self.selectedTabs(portal_tabs=portal_tabs)
+        
+        #selected_portal_tab = selected_tabs['portal']
         # XXX: The recursion should probably be done in python code
 
         return context.homepage_sections(
             children=data.get('children', []),
             level=1,
-            bottomLevel=bottomLevel,
-            selected_portal_tab=selected_portal_tab,
+            bottomLevel=bottomLevel
         )
 
 
