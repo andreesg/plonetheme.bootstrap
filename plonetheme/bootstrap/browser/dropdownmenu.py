@@ -10,7 +10,7 @@ class BootstrapDropdownMenu(ViewletBase):
         view = getMultiAdapter((context, self.request),
                                name='sitemap_builder_view')
         data = view.siteMap()
-        bottomLevel = 2
+        bottomLevel = 5
         #portal_tabs_view = getMultiAdapter((context, self.request),
         #                                   name='portal_tabs_view')
         
